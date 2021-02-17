@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.js": "/themovie-web/static/js/main.9bb76208.chunk.js",
-    "main.js.map": "/themovie-web/static/js/main.9bb76208.chunk.js.map",
+    "main.js": "/themovie-web/static/js/main.86faa8c2.chunk.js",
+    "main.js.map": "/themovie-web/static/js/main.86faa8c2.chunk.js.map",
     "runtime-main.js": "/themovie-web/static/js/runtime-main.e5f97c5b.js",
     "runtime-main.js.map": "/themovie-web/static/js/runtime-main.e5f97c5b.js.map",
-    "static/js/2.1cf146be.chunk.js": "/themovie-web/static/js/2.1cf146be.chunk.js",
-    "static/js/2.1cf146be.chunk.js.map": "/themovie-web/static/js/2.1cf146be.chunk.js.map",
+    "static/js/2.6028e5ab.chunk.js": "/themovie-web/static/js/2.6028e5ab.chunk.js",
+    "static/js/2.6028e5ab.chunk.js.map": "/themovie-web/static/js/2.6028e5ab.chunk.js.map",
     "index.html": "/themovie-web/index.html",
-    "static/js/2.1cf146be.chunk.js.LICENSE.txt": "/themovie-web/static/js/2.1cf146be.chunk.js.LICENSE.txt",
+    "static/js/2.6028e5ab.chunk.js.LICENSE.txt": "/themovie-web/static/js/2.6028e5ab.chunk.js.LICENSE.txt",
     "static/media/LOGO.a5181de3.png": "/themovie-web/static/media/LOGO.a5181de3.png"
   },
   "entrypoints": [
     "static/js/runtime-main.e5f97c5b.js",
-    "static/js/2.1cf146be.chunk.js",
-    "static/js/main.9bb76208.chunk.js"
+    "static/js/2.6028e5ab.chunk.js",
+    "static/js/main.86faa8c2.chunk.js"
   ]
 }
