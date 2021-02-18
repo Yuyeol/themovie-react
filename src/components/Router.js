@@ -6,8 +6,8 @@ import MyList from "screens/MyList";
 import Search from "screens/Search";
 import Shows from "screens/Shows";
 import Movies from "screens/Movies";
-
 import Header from "./Header/Header";
+import Footer from "./Footer/Footer";
 
 const Router = () => {
   return (
@@ -20,6 +20,7 @@ const Router = () => {
       <Route path="/search" exact component={Search} />
       <Route path="/movie/:id" component={Detail} />
       <Route path="/show/:id" component={Detail} />
+      <Footer />
     </HashRouter>
   );
 };
