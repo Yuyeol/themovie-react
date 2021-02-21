@@ -4,14 +4,11 @@ import { useState } from "react";
 import styled from "styled-components";
 import { moviesApi, tvApi } from "../api";
 import { GREY, PINK } from "../Styles";
-import MVTopRated from "../components/Home/Banner/MVTopRated";
-import TVTopRated from "../components/Home/Banner/TVTopRated";
-import MVUpcomming from "../components/CommonList/MV/MVUpcomming";
-import MVPopular from "../components/CommonList/MV/MVPopular";
-import TVPopular from "../components/CommonList/TV/TVPopular";
 import Loading from "../components/Loading/Loading";
-import TVOnTheAir from "../components/CommonList/TV/TVOnTheAir";
-import Section from "../components/Home/Banner/Poster/Section";
+import BannerSection from "../components/Home/Banner/Poster/BannerSection";
+import BannerPoster from "../components/Home/Banner/Poster/BannerPoster";
+import Section from "../components/Poster/Section";
+import Poster from "../components/Poster/Poster";
 
 const Container = styled.div``;
 const Banner = styled.div`
@@ -26,14 +23,16 @@ const Banner = styled.div`
       justify-content: center;
       width: 70px;
       align-items: center;
-      &:first-child {
-        background-color: ${PINK};
-      }
-      &:last-child {
-        background-color: ${GREY};
+
       }
     }
   }
+`;
+const ToggleMv = styled.div`
+  background-color: ${(props) => (props.selected ? PINK : GREY)};
+`;
+const ToggleTv = styled.div`
+  background-color: ${(props) => (props.selected ? GREY : PINK)};
 `;
 
 const Home = () => {
@@ -45,6 +44,8 @@ const Home = () => {
   const [tvPopular, setTvPopular] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [toggleBanner, setToggleBanner] = useState(true);
+  console.log(toggleBanner);
   useEffect(() => {
     const loadData = async () => {
       try {
@@ -82,6 +83,12 @@ const Home = () => {
     loadData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  const turnMV = () => {
+    setToggleBanner(true);
+  };
+  const turnTV = () => {
+    setToggleBanner(false);
+  };
   return (
     <Container>
       {loading ? (
@@ -89,28 +96,56 @@ const Home = () => {
       ) : (
         <>
           <Banner>
-            <Section title="Top Rated">
-              
-            </Section>
-            ###################################################################무비레이티드
-            <MVTopRated mvTopRated={mvTopRated} />
-            ###################################################################티비레이티드
-            <TVTopRated tvTopRated={tvTopRated} />
+            {toggleBanner ? (
+              <BannerSection>
+                {mvTopRated.map((m) => (
+                  <BannerPoster key={m.id} title={m.original_title} />
+                ))}
+              </BannerSection>
+            ) : (
+              <BannerSection>
+                {tvTopRated.map((m) => (
+                  <BannerPoster key={m.id} title={m.original_name} />
+                ))}
+              </BannerSection>
+            )}
             <div className="toggle-box">
-              {/* =토글로 mv&tv 전환되는 롤링배너 */}
-              <div className="toggle-mv">Movies</div>
-              <div className="toggle-tv">Shows</div>
+              <ToggleMv
+                className="toggle-mv"
+                onClick={turnMV}
+                selected={toggleBanner}
+              >
+                Movies
+              </ToggleMv>
+              <ToggleTv
+                className="toggle-tv"
+                onClick={turnTV}
+                selected={toggleBanner}
+              >
+                Shows
+              </ToggleTv>
             </div>
           </Banner>
-          {/* TV popular&upcomming, Movie popular&upcommning */}
-          ###################################################################무비업커밍
-          <MVUpcomming mvUpcomming={mvUpcomming} />
-          ###################################################################티비업커밍
-          <TVOnTheAir tvOnTheAir={tvOnTheAir} />
-          ###################################################################무비인기
-          <MVPopular mvPopular={mvPopular} />
-          ###################################################################티비인기
-          <TVPopular tvPopular={tvPopular} />
+          <Section title="Upcomming Movies">
+            {mvUpcomming.map((m) => (
+              <Poster key={m.id} title={m.original_title} />
+            ))}
+          </Section>
+          <Section title="Popular Movies">
+            {mvPopular.map((m) => (
+              <Poster key={m.id} title={m.original_title} />
+            ))}
+          </Section>
+          <Section title="On The Air Shows">
+            {tvOnTheAir.map((t) => (
+              <Poster key={t.id} title={t.original_name} />
+            ))}
+          </Section>
+          <Section title="Popular Shows">
+            {tvPopular.map((t) => (
+              <Poster key={t.id} title={t.original_name} />
+            ))}
+          </Section>
         </>
       )}
     </Container>

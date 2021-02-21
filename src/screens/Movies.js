@@ -3,11 +3,9 @@ import { useEffect } from "react";
 import { useState } from "react";
 import styled from "styled-components";
 import { moviesApi } from "../api";
-import MVNowPlaying from "../components/CommonList/MV/MVNowPlaying";
-import MVPopular from "../components/CommonList/MV/MVPopular";
-import MVTopRated from "../components/CommonList/MV/MVTopRated";
-import MVUpcomming from "../components/CommonList/MV/MVUpcomming";
 import Loading from "../components/Loading/Loading";
+import Poster from "../components/Poster/Poster";
+import Section from "../components/Poster/Section";
 
 const Container = styled.div``;
 
@@ -53,13 +51,29 @@ const Movie = () => {
       ) : (
         <>
           ###################################################################무비레이티드
-          <MVTopRated mvTopRated={mvTopRated} />
+          <Section title="Top Rated">
+            {mvTopRated.map((m) => (
+              <Poster key={m.id} title={m.original_title} />
+            ))}
+          </Section>
           ###################################################################무비나우플레잉
-          <MVNowPlaying mvNowPlaying={mvNowPlaying} />
+          <Section title="Now Playing">
+            {mvNowPlaying.map((m) => (
+              <Poster key={m.id} title={m.original_title} />
+            ))}
+          </Section>
           ###################################################################무비인기
-          <MVPopular mvPopular={mvPopular} />
+          <Section title="Popular">
+            {mvPopular.map((m) => (
+              <Poster key={m.id} title={m.original_title} />
+            ))}
+          </Section>
           ###################################################################무비업커밍
-          <MVUpcomming mvUpcomming={mvUpcomming} />
+          <Section title="Upcomming">
+            {mvUpcomming.map((m) => (
+              <Poster key={m.id} title={m.original_title} />
+            ))}
+          </Section>
         </>
       )}
     </Container>

@@ -3,8 +3,8 @@ import { useState } from "react/cjs/react.development";
 import styled from "styled-components";
 import { moviesApi, tvApi } from "../api";
 import Loading from "../components/Loading/Loading";
-import SearchMV from "../components/Search/SearchMV";
-import SearchTV from "../components/Search/SearchTV";
+import Poster from "../components/Poster/Poster";
+import Section from "../components/Poster/Section";
 import { BLACK, PINK, WHITE } from "../Styles";
 
 const Container = styled.div``;
@@ -85,10 +85,16 @@ const Search = () => {
         <></>
       ) : (
         <ResultsBox>
-          ###################################################################무비검색
-          <SearchMV mvResults={mvResults} />
-          ###################################################################티비검색
-          <SearchTV tvResults={tvResults} />
+          <Section title="Movie Results">
+            {mvResults.map((m) => (
+              <Poster key={m.id} title={m.original_title} />
+            ))}
+          </Section>
+          <Section title="Show Results">
+            {tvResults.map((t) => (
+              <Poster key={t.id} title={t.original_name} />
+            ))}
+          </Section>
         </ResultsBox>
       )}
     </Container>

@@ -2,9 +2,14 @@ import React from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
-  font-size: 12px;
+  .img-box {
+  }
 `;
 
-const Poster = () => <Container></Container>;
+const Poster = ({ title }) => (
+  <Container>
+    <div className="img-box">{title}</div>
+  </Container>
+);
 
 export default Poster;
