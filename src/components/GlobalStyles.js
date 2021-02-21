@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
-import { BLACK } from "Styles";
+import { WHITE } from "Styles";
+import { BLACK } from "../Styles";
 
 const GlobalStyles = createGlobalStyle`
     a{
@@ -14,7 +15,7 @@ const GlobalStyles = createGlobalStyle`
         margin:0;
         font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         background-color:${BLACK};
-        color:white;
+        color:${WHITE}
     }
 `;
 

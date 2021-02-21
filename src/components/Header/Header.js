@@ -1,24 +1,25 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
-import { YELLOW } from "Styles";
+import { PINK } from "Styles";
 import logoImg from "assets/LOGO.png";
+import { WHITE } from "../../Styles";
 
 const Container = styled.div`
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(16, 24, 32, 0.8);
+  background-color: rgba(20, 20, 20, 0.7);
   display: flex;
-  box-shadow: 0px 1px 5px 2px rgba(0, 0, 0, 0.8);
+  box-shadow: 0px 1px 5px 2px rgba(0, 0, 0, 0.5);
   .logo {
     display: flex;
     align-items: center;
-    margin-left: 20px;
+    margin-left: 10px;
     margin-right: 10px;
     .logo-img {
-      width: 50px;
+      width: 90px;
     }
   }
   .header-list {
@@ -27,16 +28,17 @@ const Container = styled.div`
 `;
 const Item = styled.div`
   text-align: center;
-  width: 120px;
-  color: white;
+  width: 110px;
+  color: ${WHITE};
   font-size: 22px;
   font-weight: 600;
   padding: 10px 0px;
-  border-bottom: 3px solid
-    ${(props) => (props.selected ? YELLOW : "transparent")};
-  transition: border-bottom 0.5s ease-in-out;
+  border-bottom: 3.5px solid
+    ${(props) => (props.selected ? PINK : "transparent")};
+  margin-bottom: 1px;
+  transition: border-bottom 0.3s ease-in-out;
   &:hover {
-    border-bottom: 3px solid rgba(254, 231, 21, 0.8);
+    border-bottom: 3.5px solid rgba(218, 48, 93, 0.8);
   }
 `;
 

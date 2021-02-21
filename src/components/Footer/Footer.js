@@ -1,16 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { YELLOW, BLACK } from "../../Styles";
+import { GREY, WHITE } from "../../Styles";
 
 const Container = styled.div`
-  position: absolute;
-  width: 100%;
-  bottom: 0;
   height: 35px;
   display: flex;
   justify-content: center;
-  background-color: ${YELLOW};
-  color: ${BLACK};
+  background-color: ${GREY};
+  color: ${WHITE};
   div {
     font-weight: 600;
     display: flex;
