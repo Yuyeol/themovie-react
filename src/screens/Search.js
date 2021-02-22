@@ -22,6 +22,9 @@ const SearchForm = styled.div`
         border-bottom: 2px solid ${PINK};
         outline: none;
       }
+      @media screen and (max-width: 700px) {
+        width: 100%;
+      }
     }
   }
 `;

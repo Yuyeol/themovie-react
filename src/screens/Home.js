@@ -5,10 +5,9 @@ import styled from "styled-components";
 import { moviesApi, tvApi } from "../api";
 import { GREY, PINK } from "../Styles";
 import Loading from "../components/Loading/Loading";
-import BannerSection from "../components/Home/Banner/Poster/BannerSection";
-import BannerPoster from "../components/Home/Banner/Poster/BannerPoster";
 import Section from "../components/Poster/Section";
 import Poster from "../components/Poster/Poster";
+import SlideBanner from "../components/Home/Banner/SlideBanner";
 
 const Container = styled.div``;
 const Banner = styled.div`
@@ -23,8 +22,7 @@ const Banner = styled.div`
       justify-content: center;
       width: 70px;
       align-items: center;
-
-      }
+      cursor: pointer;
     }
   }
 `;
@@ -45,7 +43,7 @@ const Home = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
   const [toggleBanner, setToggleBanner] = useState(true);
-  console.log(toggleBanner);
+  console.log(mvUpcomming);
   useEffect(() => {
     const loadData = async () => {
       try {
@@ -96,19 +94,11 @@ const Home = () => {
       ) : (
         <>
           <Banner>
-            {toggleBanner ? (
-              <BannerSection>
-                {mvTopRated.map((m) => (
-                  <BannerPoster key={m.id} title={m.original_title} />
-                ))}
-              </BannerSection>
-            ) : (
-              <BannerSection>
-                {tvTopRated.map((m) => (
-                  <BannerPoster key={m.id} title={m.original_name} />
-                ))}
-              </BannerSection>
-            )}
+            <SlideBanner
+              mvTopRated={mvTopRated}
+              tvTopRated={tvTopRated}
+              toggleBanner={toggleBanner}
+            />
             <div className="toggle-box">
               <ToggleMv
                 className="toggle-mv"
