@@ -53,22 +53,46 @@ const Shows = () => {
         <>
           <Section title="Top Rated">
             {tvTopRated.map((t) => (
-              <Poster key={t.id} title={t.original_name} />
+              <Poster
+                key={t.id}
+                title={t.original_name}
+                imgUrl={t.poster_path}
+                rate={t.vote_average}
+                voteCount={t.vote_count}
+              />
             ))}
           </Section>
           <Section title="Airing Today">
             {tvAiringToday.map((t) => (
-              <Poster key={t.id} title={t.original_name} />
+              <Poster
+                key={t.id}
+                title={t.original_name}
+                imgUrl={t.poster_path}
+                rate={t.vote_average}
+                voteCount={t.vote_count}
+              />
             ))}
           </Section>
           <Section title="Popular">
             {tvPopular.map((t) => (
-              <Poster key={t.id} title={t.original_name} />
+              <Poster
+                key={t.id}
+                title={t.original_name}
+                imgUrl={t.poster_path}
+                rate={t.vote_average}
+                voteCount={t.vote_count}
+              />
             ))}
           </Section>
           <Section title="On The Air">
             {tvOnTheAir.map((t) => (
-              <Poster key={t.id} title={t.original_name} />
+              <Poster
+                key={t.id}
+                title={t.original_name}
+                imgUrl={t.poster_path}
+                rate={t.vote_average}
+                voteCount={t.vote_count}
+              />
             ))}
           </Section>
         </>

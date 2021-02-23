@@ -3,12 +3,25 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styled from "styled-components";
-import { BLACK } from "../../../Styles";
+import { BLACK, PINK } from "../../../Styles";
 
 const Container = styled.div`
   background-color: ${BLACK};
   .poster {
     position: relative;
+    .rank {
+      position: absolute;
+      background-color: ${PINK};
+      width: 40px;
+      height: 40px;
+      font-size: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid #c10644;
+      border-right: 4px solid #c10644;
+      border-bottom: 5px solid #c10644;
+    }
     img {
       width: 100%;
       cursor: pointer;
@@ -27,9 +40,8 @@ const SlideBanner = ({ mvTopRated, tvTopRated, toggleBanner }) => {
     slidesToScroll: 5,
     arrows: false,
     responsive: [
-      // 반응형 웹 구현 옵션
       {
-        breakpoint: 700, // 화면 사이즈 1200px
+        breakpoint: 700,
         settings: {
           slidesToShow: 3,
         },
@@ -40,16 +52,18 @@ const SlideBanner = ({ mvTopRated, tvTopRated, toggleBanner }) => {
     <Container>
       <Slider {...settings}>
         {toggleBanner
-          ? mvTopRated.map((m) => (
+          ? mvTopRated.map((m, i) => (
               <div className="poster" key={m.id}>
+                <div className="rank">{i + 1}</div>
                 <img
                   src={`https://image.tmdb.org/t/p/original${m.poster_path}`}
                   alt="poster"
                 />
               </div>
             ))
-          : tvTopRated.map((t) => (
+          : tvTopRated.map((t, i) => (
               <div className="poster" key={t.id}>
+                <div className="rank">{i + 1}</div>
                 <img
                   src={`https://image.tmdb.org/t/p/original${t.poster_path}`}
                   alt="poster"

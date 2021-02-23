@@ -8,7 +8,7 @@ import { TiThMenu } from "react-icons/ti";
 import { useRef, useState } from "react/cjs/react.development";
 
 const Container = styled.div`
-  z-index: 10;
+  z-index: 3;
   position: fixed;
   top: 0;
   left: 0;

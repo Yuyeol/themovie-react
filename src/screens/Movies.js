@@ -51,28 +51,48 @@ const Movie = () => {
         <Loading />
       ) : (
         <>
-          ###################################################################무비레이티드
           <Section title="Top Rated">
             {mvTopRated.map((m) => (
-              <Poster key={m.id} title={m.original_title} />
+              <Poster
+                key={m.id}
+                title={m.original_title}
+                imgUrl={m.poster_path}
+                rate={m.vote_average}
+                voteCount={m.vote_count}
+              />
             ))}
           </Section>
-          ###################################################################무비나우플레잉
           <Section title="Now Playing">
             {mvNowPlaying.map((m) => (
-              <Poster key={m.id} title={m.original_title} />
+              <Poster
+                key={m.id}
+                title={m.original_title}
+                imgUrl={m.poster_path}
+                rate={m.vote_average}
+                voteCount={m.vote_count}
+              />
             ))}
           </Section>
-          ###################################################################무비인기
           <Section title="Popular">
             {mvPopular.map((m) => (
-              <Poster key={m.id} title={m.original_title} />
+              <Poster
+                key={m.id}
+                title={m.original_title}
+                imgUrl={m.poster_path}
+                rate={m.vote_average}
+                voteCount={m.vote_count}
+              />
             ))}
           </Section>
-          ###################################################################무비업커밍
           <Section title="Upcomming">
             {mvUpcomming.map((m) => (
-              <Poster key={m.id} title={m.original_title} />
+              <Poster
+                key={m.id}
+                title={m.original_title}
+                imgUrl={m.poster_path}
+                rate={m.vote_average}
+                voteCount={m.vote_count}
+              />
             ))}
           </Section>
         </>

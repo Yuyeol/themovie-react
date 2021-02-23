@@ -90,12 +90,24 @@ const Search = () => {
         <ResultsBox>
           <Section title="Movie Results">
             {mvResults.map((m) => (
-              <Poster key={m.id} title={m.original_title} />
+              <Poster
+                key={m.id}
+                title={m.original_title}
+                imgUrl={m.poster_path}
+                rate={m.vote_average}
+                voteCount={m.vote_count}
+              />
             ))}
           </Section>
           <Section title="Show Results">
             {tvResults.map((t) => (
-              <Poster key={t.id} title={t.original_name} />
+              <Poster
+                key={t.id}
+                title={t.original_name}
+                imgUrl={t.poster_path}
+                rate={t.vote_average}
+                voteCount={t.vote_count}
+              />
             ))}
           </Section>
         </ResultsBox>

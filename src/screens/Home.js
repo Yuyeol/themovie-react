@@ -43,7 +43,6 @@ const Home = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
   const [toggleBanner, setToggleBanner] = useState(true);
-  console.log(mvUpcomming);
   useEffect(() => {
     const loadData = async () => {
       try {
@@ -118,22 +117,46 @@ const Home = () => {
           </Banner>
           <Section title="Upcomming Movies">
             {mvUpcomming.map((m) => (
-              <Poster key={m.id} title={m.original_title} />
+              <Poster
+                key={m.id}
+                title={m.original_title}
+                imgUrl={m.poster_path}
+                rate={m.vote_average}
+                voteCount={m.vote_count}
+              />
             ))}
           </Section>
           <Section title="Popular Movies">
             {mvPopular.map((m) => (
-              <Poster key={m.id} title={m.original_title} />
+              <Poster
+                key={m.id}
+                title={m.original_title}
+                imgUrl={m.poster_path}
+                rate={m.vote_average}
+                voteCount={m.vote_count}
+              />
             ))}
           </Section>
           <Section title="On The Air Shows">
             {tvOnTheAir.map((t) => (
-              <Poster key={t.id} title={t.original_name} />
+              <Poster
+                key={t.id}
+                title={t.original_name}
+                imgUrl={t.poster_path}
+                rate={t.vote_average}
+                voteCount={t.vote_count}
+              />
             ))}
           </Section>
           <Section title="Popular Shows">
             {tvPopular.map((t) => (
-              <Poster key={t.id} title={t.original_name} />
+              <Poster
+                key={t.id}
+                title={t.original_name}
+                imgUrl={t.poster_path}
+                rate={t.vote_average}
+                voteCount={t.vote_count}
+              />
             ))}
           </Section>
         </>
