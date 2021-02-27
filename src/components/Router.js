@@ -1,12 +1,12 @@
 import React from "react";
 import { HashRouter, Redirect, Route, Switch } from "react-router-dom";
-import Detail from "screens/Detail";
-import Home from "screens/Home";
-import Search from "screens/Search";
-import Shows from "screens/Shows";
-import Movies from "screens/Movies";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
+import Home from "../screens/Home";
+import Shows from "../screens/Shows";
+import Movies from "../screens/Movies";
+import Search from "../screens/Search";
+import Detail from "../screens/Detail";
 
 const Router = () => {
   return (
