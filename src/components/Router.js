@@ -10,7 +10,7 @@ import Footer from "./Footer/Footer";
 
 const Router = () => {
   return (
-    <HashRouter basename={process.env.PUBLIC_URL}>
+    <HashRouter>
       <Header />
       <Switch>
         <Route path="/" exact component={Home} />
