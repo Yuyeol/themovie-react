@@ -95,7 +95,7 @@ const Header = ({ location: { pathname } }) => {
       <div className="header-list">
         <Link to="/">
           <Item className="header-item" selected={pathname === "/"}>
-            Homeas
+            Home
           </Item>
         </Link>
         <Link to="/movies">
