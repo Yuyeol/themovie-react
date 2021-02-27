@@ -59,6 +59,8 @@ const Shows = () => {
                 imgUrl={t.poster_path}
                 rate={t.vote_average}
                 voteCount={t.vote_count}
+                id={t.id}
+                isMovie={false}
               />
             ))}
           </Section>
@@ -70,6 +72,8 @@ const Shows = () => {
                 imgUrl={t.poster_path}
                 rate={t.vote_average}
                 voteCount={t.vote_count}
+                id={t.id}
+                isMovie={false}
               />
             ))}
           </Section>
@@ -81,6 +85,8 @@ const Shows = () => {
                 imgUrl={t.poster_path}
                 rate={t.vote_average}
                 voteCount={t.vote_count}
+                id={t.id}
+                isMovie={false}
               />
             ))}
           </Section>
@@ -92,6 +98,8 @@ const Shows = () => {
                 imgUrl={t.poster_path}
                 rate={t.vote_average}
                 voteCount={t.vote_count}
+                id={t.id}
+                isMovie={false}
               />
             ))}
           </Section>

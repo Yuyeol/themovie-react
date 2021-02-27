@@ -109,11 +109,6 @@ const Header = ({ location: { pathname } }) => {
             Shows
           </Item>
         </Link>
-        <Link to="/mylist">
-          <Item className="header-item" selected={pathname === "/mylist"}>
-            My List
-          </Item>
-        </Link>
         <Link to="/search">
           <Item className="header-item" selected={pathname === "/search"}>
             Search
@@ -138,11 +133,6 @@ const Header = ({ location: { pathname } }) => {
           <Link to="/shows">
             <Item className="header-item" selected={pathname === "/shows"}>
               Shows
-            </Item>
-          </Link>
-          <Link to="/mylist">
-            <Item className="header-item" selected={pathname === "/mylist"}>
-              My List
             </Item>
           </Link>
           <Link to="/search">

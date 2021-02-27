@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import noPosterS from "assets/noPosterSmall.png";
+import { Link } from "react-router-dom";
 
 const Rating = styled.div`
   position: absolute;
@@ -39,20 +40,24 @@ const Container = styled.div`
   }
 `;
 
-const Poster = ({ title, imgUrl, rate, voteCount }) => {
+const Poster = ({ title, imgUrl, rate, voteCount, id, isMovie }) => {
   return (
     <Container>
-      <div className="img-box">
-        <Rating className="rating">
-          <span>⭐️</span>
-          {rate}/10 ({voteCount})
-        </Rating>
-        <img
-          alt="poster"
-          src={imgUrl ? `https://image.tmdb.org/t/p/w300${imgUrl}` : noPosterS}
-        />
-      </div>
-      {title.length > 18 ? `${title.substring(0, 10)}...` : title}
+      <Link to={isMovie ? `/movie/${id}` : `/show/${id}`}>
+        <div className="img-box">
+          <Rating className="rating">
+            <span>⭐️</span>
+            {rate}/10 ({voteCount})
+          </Rating>
+          <img
+            alt="poster"
+            src={
+              imgUrl ? `https://image.tmdb.org/t/p/w300${imgUrl}` : noPosterS
+            }
+          />
+        </div>
+        {title.length > 18 ? `${title.substring(0, 10)}...` : title}
+      </Link>
     </Container>
   );
 };

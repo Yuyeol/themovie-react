@@ -96,6 +96,8 @@ const Search = () => {
                 imgUrl={m.poster_path}
                 rate={m.vote_average}
                 voteCount={m.vote_count}
+                id={m.id}
+                isMovie={true}
               />
             ))}
           </Section>
@@ -107,6 +109,8 @@ const Search = () => {
                 imgUrl={t.poster_path}
                 rate={t.vote_average}
                 voteCount={t.vote_count}
+                id={t.id}
+                isMovie={false}
               />
             ))}
           </Section>

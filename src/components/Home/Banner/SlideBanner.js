@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styled from "styled-components";
 import { BLACK, PINK } from "../../../Styles";
+import SlidePoster from "./SlidePoster";
 
 const Container = styled.div`
   background-color: ${BLACK};
@@ -29,7 +30,7 @@ const Container = styled.div`
   }
 `;
 
-const SlideBanner = ({ mvTopRated, tvTopRated, toggleBanner }) => {
+const SlideBanner = ({ mvTopRated, tvTopRated, toggleBanner, isMovie }) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -52,23 +53,9 @@ const SlideBanner = ({ mvTopRated, tvTopRated, toggleBanner }) => {
     <Container>
       <Slider {...settings}>
         {toggleBanner
-          ? mvTopRated.map((m, i) => (
-              <div className="poster" key={m.id}>
-                <div className="rank">{i + 1}</div>
-                <img
-                  src={`https://image.tmdb.org/t/p/original${m.poster_path}`}
-                  alt="poster"
-                />
-              </div>
-            ))
+          ? mvTopRated.map((m, i) => <SlidePoster m={m} i={i} isMovie={true} />)
           : tvTopRated.map((t, i) => (
-              <div className="poster" key={t.id}>
-                <div className="rank">{i + 1}</div>
-                <img
-                  src={`https://image.tmdb.org/t/p/original${t.poster_path}`}
-                  alt="poster"
-                />
-              </div>
+              <SlidePoster t={t} i={i} isMovie={false} />
             ))}
       </Slider>
     </Container>

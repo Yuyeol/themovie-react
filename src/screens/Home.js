@@ -14,14 +14,15 @@ const Banner = styled.div`
   .toggle-box {
     display: flex;
     div {
+      z-index: 10;
       font-weight: 600;
       padding-bottom: 3.5px;
       margin: 10px;
       border-radius: 50px;
       display: flex;
       justify-content: center;
-      width: 70px;
       align-items: center;
+      width: 70px;
       cursor: pointer;
     }
   }
@@ -123,6 +124,8 @@ const Home = () => {
                 imgUrl={m.poster_path}
                 rate={m.vote_average}
                 voteCount={m.vote_count}
+                id={m.id}
+                isMovie={true}
               />
             ))}
           </Section>
@@ -134,6 +137,7 @@ const Home = () => {
                 imgUrl={m.poster_path}
                 rate={m.vote_average}
                 voteCount={m.vote_count}
+                isMovie={true}
               />
             ))}
           </Section>
@@ -145,6 +149,8 @@ const Home = () => {
                 imgUrl={t.poster_path}
                 rate={t.vote_average}
                 voteCount={t.vote_count}
+                id={t.id}
+                isMovie={false}
               />
             ))}
           </Section>
@@ -156,6 +162,8 @@ const Home = () => {
                 imgUrl={t.poster_path}
                 rate={t.vote_average}
                 voteCount={t.vote_count}
+                id={t.id}
+                isMovie={false}
               />
             ))}
           </Section>
