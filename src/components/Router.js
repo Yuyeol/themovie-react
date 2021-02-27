@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, HashRouter, Redirect, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import Detail from "screens/Detail";
 import Home from "screens/Home";
 import Search from "screens/Search";
