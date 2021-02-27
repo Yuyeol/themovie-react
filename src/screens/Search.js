@@ -34,7 +34,6 @@ const SearchForm = styled.div`
 const ResultsBox = styled.div``;
 
 const Search = () => {
-  const [blank, setBlank] = useState(true);
   const [mvResults, setMvResults] = useState(null);
   const [tvResults, setTvResults] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
@@ -49,7 +48,6 @@ const Search = () => {
     if (searchTerm !== "") {
       loadData();
       setSearchTerm("");
-      setBlank(false);
     }
   };
 
@@ -85,9 +83,7 @@ const Search = () => {
           />
         </form>
       </SearchForm>
-      {blank ? (
-        <div className="blank" />
-      ) : loading ? (
+      {loading ? (
         <Loading />
       ) : (
         <ResultsBox>
