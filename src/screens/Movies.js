@@ -52,56 +52,60 @@ const Movie = () => {
       ) : (
         <>
           <Section title="Top Rated">
-            {mvTopRated.map((m) => (
-              <Poster
-                key={m.id}
-                title={m.original_title}
-                imgUrl={m.poster_path}
-                rate={m.vote_average}
-                voteCount={m.vote_count}
-                id={m.id}                isMovie={true}
-
-              />
-            ))}
+            {mvTopRated &&
+              mvTopRated.map((m) => (
+                <Poster
+                  key={m.id}
+                  title={m.original_title}
+                  imgUrl={m.poster_path}
+                  rate={m.vote_average}
+                  voteCount={m.vote_count}
+                  id={m.id}
+                  isMovie={true}
+                />
+              ))}
           </Section>
           <Section title="Now Playing">
-            {mvNowPlaying.map((m) => (
-              <Poster
-                key={m.id}
-                title={m.original_title}
-                imgUrl={m.poster_path}
-                rate={m.vote_average}
-                voteCount={m.vote_count}
-                id={m.id}                isMovie={true}
-
-              />
-            ))}
+            {mvNowPlaying &&
+              mvNowPlaying.map((m) => (
+                <Poster
+                  key={m.id}
+                  title={m.original_title}
+                  imgUrl={m.poster_path}
+                  rate={m.vote_average}
+                  voteCount={m.vote_count}
+                  id={m.id}
+                  isMovie={true}
+                />
+              ))}
           </Section>
           <Section title="Popular">
-            {mvPopular.map((m) => (
-              <Poster
-                key={m.id}
-                title={m.original_title}
-                imgUrl={m.poster_path}
-                rate={m.vote_average}
-                voteCount={m.vote_count}
-                id={m.id}                isMovie={true}
-
-              />
-            ))}
+            {mvPopular &&
+              mvPopular.map((m) => (
+                <Poster
+                  key={m.id}
+                  title={m.original_title}
+                  imgUrl={m.poster_path}
+                  rate={m.vote_average}
+                  voteCount={m.vote_count}
+                  id={m.id}
+                  isMovie={true}
+                />
+              ))}
           </Section>
           <Section title="Upcomming">
-            {mvUpcomming.map((m) => (
-              <Poster
-                key={m.id}
-                title={m.original_title}
-                imgUrl={m.poster_path}
-                rate={m.vote_average}
-                voteCount={m.vote_count}
-                id={m.id}                isMovie={true}
-
-              />
-            ))}
+            {mvUpcomming &&
+              mvUpcomming.map((m) => (
+                <Poster
+                  key={m.id}
+                  title={m.original_title}
+                  imgUrl={m.poster_path}
+                  rate={m.vote_average}
+                  voteCount={m.vote_count}
+                  id={m.id}
+                  isMovie={true}
+                />
+              ))}
           </Section>
         </>
       )}

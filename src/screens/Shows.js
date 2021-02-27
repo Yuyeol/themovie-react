@@ -52,56 +52,60 @@ const Shows = () => {
       ) : (
         <>
           <Section title="Top Rated">
-            {tvTopRated.map((t) => (
-              <Poster
-                key={t.id}
-                title={t.original_name}
-                imgUrl={t.poster_path}
-                rate={t.vote_average}
-                voteCount={t.vote_count}
-                id={t.id}
-                isMovie={false}
-              />
-            ))}
+            {tvTopRated &&
+              tvTopRated.map((t) => (
+                <Poster
+                  key={t.id}
+                  title={t.original_name}
+                  imgUrl={t.poster_path}
+                  rate={t.vote_average}
+                  voteCount={t.vote_count}
+                  id={t.id}
+                  isMovie={false}
+                />
+              ))}
           </Section>
           <Section title="Airing Today">
-            {tvAiringToday.map((t) => (
-              <Poster
-                key={t.id}
-                title={t.original_name}
-                imgUrl={t.poster_path}
-                rate={t.vote_average}
-                voteCount={t.vote_count}
-                id={t.id}
-                isMovie={false}
-              />
-            ))}
+            {tvAiringToday &&
+              tvAiringToday.map((t) => (
+                <Poster
+                  key={t.id}
+                  title={t.original_name}
+                  imgUrl={t.poster_path}
+                  rate={t.vote_average}
+                  voteCount={t.vote_count}
+                  id={t.id}
+                  isMovie={false}
+                />
+              ))}
           </Section>
           <Section title="Popular">
-            {tvPopular.map((t) => (
-              <Poster
-                key={t.id}
-                title={t.original_name}
-                imgUrl={t.poster_path}
-                rate={t.vote_average}
-                voteCount={t.vote_count}
-                id={t.id}
-                isMovie={false}
-              />
-            ))}
+            {tvPopular &&
+              tvPopular.map((t) => (
+                <Poster
+                  key={t.id}
+                  title={t.original_name}
+                  imgUrl={t.poster_path}
+                  rate={t.vote_average}
+                  voteCount={t.vote_count}
+                  id={t.id}
+                  isMovie={false}
+                />
+              ))}
           </Section>
           <Section title="On The Air">
-            {tvOnTheAir.map((t) => (
-              <Poster
-                key={t.id}
-                title={t.original_name}
-                imgUrl={t.poster_path}
-                rate={t.vote_average}
-                voteCount={t.vote_count}
-                id={t.id}
-                isMovie={false}
-              />
-            ))}
+            {tvOnTheAir &&
+              tvOnTheAir.map((t) => (
+                <Poster
+                  key={t.id}
+                  title={t.original_name}
+                  imgUrl={t.poster_path}
+                  rate={t.vote_average}
+                  voteCount={t.vote_count}
+                  id={t.id}
+                  isMovie={false}
+                />
+              ))}
           </Section>
         </>
       )}

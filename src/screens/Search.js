@@ -92,30 +92,32 @@ const Search = () => {
       ) : (
         <ResultsBox>
           <Section title="Movie Results">
-            {mvResults.map((m) => (
-              <Poster
-                key={m.id}
-                title={m.original_title}
-                imgUrl={m.poster_path}
-                rate={m.vote_average}
-                voteCount={m.vote_count}
-                id={m.id}
-                isMovie={true}
-              />
-            ))}
+            {mvResults &&
+              mvResults.map((m) => (
+                <Poster
+                  key={m.id}
+                  title={m.original_title}
+                  imgUrl={m.poster_path}
+                  rate={m.vote_average}
+                  voteCount={m.vote_count}
+                  id={m.id}
+                  isMovie={true}
+                />
+              ))}
           </Section>
           <Section title="Show Results">
-            {tvResults.map((t) => (
-              <Poster
-                key={t.id}
-                title={t.original_name}
-                imgUrl={t.poster_path}
-                rate={t.vote_average}
-                voteCount={t.vote_count}
-                id={t.id}
-                isMovie={false}
-              />
-            ))}
+            {tvResults &&
+              tvResults.map((t) => (
+                <Poster
+                  key={t.id}
+                  title={t.original_name}
+                  imgUrl={t.poster_path}
+                  rate={t.vote_average}
+                  voteCount={t.vote_count}
+                  id={t.id}
+                  isMovie={false}
+                />
+              ))}
           </Section>
         </ResultsBox>
       )}
