@@ -65,19 +65,9 @@ const Container = styled.div`
 
 const DetailComponent = ({ mvDetail: m, tvDetail: t }) => {
   const [toggleMore, setToggleMore] = useState(true);
-  console.log(t);
   const handleMore = () => {
     setToggleMore(!toggleMore);
   };
-  //     mv
-  //     m.poster_path
-  //     m.release_date / first_air_date
-  //     m.runtime
-  //     m.original_title
-  //     m.vote_average
-  //     m.vote_count
-  //     m.genres
-  //     m.overview
   return (
     <>
       {(m || t) && (

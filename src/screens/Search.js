@@ -7,9 +7,12 @@ import Poster from "../components/Poster/Poster";
 import Section from "../components/Poster/Section";
 import { BLACK, PINK, WHITE } from "../Styles";
 
-const Container = styled.div``;
+const Container = styled.div`
+  .blank {
+    height: 100vh;
+  }
+`;
 const SearchForm = styled.div`
-  height: ${(props) => (props.active ? "100vh" : "")};
   .search-form {
     padding: 15px;
     input {
@@ -73,7 +76,7 @@ const Search = () => {
 
   return (
     <Container>
-      <SearchForm active={blank}>
+      <SearchForm>
         <form className="search-form" onSubmit={handleSubmit}>
           <input
             placeholder="Search Movie or Shows"
@@ -82,10 +85,10 @@ const Search = () => {
           />
         </form>
       </SearchForm>
-      {loading ? (
+      {blank ? (
+        <div className="blank" />
+      ) : loading ? (
         <Loading />
-      ) : blank ? (
-        <></>
       ) : (
         <ResultsBox>
           <Section title="Movie Results">
