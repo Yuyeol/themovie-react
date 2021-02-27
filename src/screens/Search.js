@@ -91,7 +91,7 @@ const Search = () => {
         <Loading />
       ) : (
         <ResultsBox>
-          <Section title="Movie Results">
+          {/* <Section title="Movie Results">
             {mvResults &&
               mvResults.map((m) => (
                 <Poster
@@ -118,7 +118,7 @@ const Search = () => {
                   isMovie={false}
                 />
               ))}
-          </Section>
+          </Section> */}
         </ResultsBox>
       )}
     </Container>
