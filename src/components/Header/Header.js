@@ -1,11 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
 import { PINK } from "Styles";
 import logoImg from "assets/LOGO.png";
 import { BLACK, WHITE } from "../../Styles";
 import { TiThMenu } from "react-icons/ti";
-import { useRef, useState } from "react/cjs/react.development";
 
 const Container = styled.div`
   z-index: 3;
@@ -96,7 +95,7 @@ const Header = ({ location: { pathname } }) => {
       <div className="header-list">
         <Link to="/">
           <Item className="header-item" selected={pathname === "/"}>
-            Home
+            Homeas
           </Item>
         </Link>
         <Link to="/movies">
