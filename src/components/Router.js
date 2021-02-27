@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter, Redirect, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import Detail from "screens/Detail";
 import Home from "screens/Home";
 import Search from "screens/Search";
@@ -10,7 +10,7 @@ import Footer from "./Footer/Footer";
 
 const Router = () => {
   return (
-    <HashRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Header />
       <Switch>
         <Route path="/" exact component={Home} />
@@ -22,7 +22,7 @@ const Router = () => {
         <Redirect from="*" to="/" />
       </Switch>
       <Footer />
-    </HashRouter>
+    </BrowserRouter>
   );
 };
 

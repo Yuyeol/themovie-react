@@ -53,9 +53,11 @@ const SlideBanner = ({ mvTopRated, tvTopRated, toggleBanner, isMovie }) => {
     <Container>
       <Slider {...settings}>
         {toggleBanner
-          ? mvTopRated.map((m, i) => <SlidePoster m={m} i={i} isMovie={true} />)
+          ? mvTopRated.map((m, i) => (
+              <SlidePoster m={m} i={i} isMovie={true} key={m.id} />
+            ))
           : tvTopRated.map((t, i) => (
-              <SlidePoster t={t} i={i} isMovie={false} />
+              <SlidePoster t={t} i={i} isMovie={false} key={t.id} />
             ))}
       </Slider>
     </Container>
