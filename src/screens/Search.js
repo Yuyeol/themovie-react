@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react/cjs/react.development";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { moviesApi, tvApi } from "../api";
 import Loading from "../components/Loading/Loading";
@@ -40,7 +39,6 @@ const Search = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-
   const handleInput = ({ target: { value } }) => {
     setSearchTerm(value);
   };
@@ -59,12 +57,10 @@ const Search = () => {
       const {
         data: { results: mvR },
       } = await moviesApi.search(searchTerm);
-      console.log(mvR);
       setMvResults(mvR);
       const {
         data: { results: tvR },
       } = await tvApi.search(searchTerm);
-      console.log(tvR);
       setTvResults(tvR);
     } catch {
       setError("Can't find information.");
@@ -73,7 +69,6 @@ const Search = () => {
       setLoading(false);
     }
   };
-
   return (
     <Container>
       <SearchForm>
@@ -91,7 +86,7 @@ const Search = () => {
         <Loading />
       ) : (
         <ResultsBox>
-          {/* <Section title="Movie Results">
+          <Section title="Movie Results">
             {mvResults &&
               mvResults.map((m) => (
                 <Poster
@@ -118,7 +113,7 @@ const Search = () => {
                   isMovie={false}
                 />
               ))}
-          </Section> */}
+          </Section>
         </ResultsBox>
       )}
     </Container>

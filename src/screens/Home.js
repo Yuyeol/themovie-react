@@ -14,10 +14,10 @@ const Banner = styled.div`
   .toggle-box {
     display: flex;
     div {
-      z-index: 10;
+      z-index: 9;
       font-weight: 600;
-      padding-bottom: 3.5px;
       margin: 10px;
+      padding: 2px 0;
       border-radius: 50px;
       display: flex;
       justify-content: center;

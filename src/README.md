@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# [개인 프로젝트] 무비포스터 뷰어
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[[프로젝트 열기]](http://Yuyeol.github.io/themovie-react)
 
-## Available Scripts
+### 개요
+* `TMDB API`를 활용하여 테마 및 카테고리별 TV Show와 Movie 정보를 제공
+  
+### 활용기술
+* React : Hooks, Router
+* CSS : Styled Components
+* Axios
 
-In the project directory, you can run:
+### 주요기능 
+* Home
+  - 슬라이드 배너
+  - 테마별 리스트 : Movie, Show 종합
+* Movie
+  - 테마별 리스트 : Top Rated / Now Playing / Popular / Upcomming
+* Show
+  - 테마별 리스트 : Top Rated / Airing Today / Popular / Popular
+* Search
+  - 제목 검색기능
 
-### `npm start`
+* Media Query : PC, 모바일에서 보기 쉽도록 반응형웹 구현
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 상세설명
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+* 슬라이드 배너  
+![slide banner](https://user-images.githubusercontent.com/52055504/109618141-8c007980-7b7a-11eb-9085-d99aa4bb05df.gif)
+  - React Slick 라이브러리 사용
+  - 일정 초단위로 자동 슬라이드
+  - 클릭 시 해당 Movie 또는 Show Detail로 이동
+  - 좌측 하단 카테고리(Movie / Show) 라디오 버튼
 
-### `npm test`
+* 테마별 리스트  
+![Theme List](https://user-images.githubusercontent.com/52055504/109620078-d5ea5f00-7b7c-11eb-8fd3-eb8f9d5f31f2.jpg)
+  - Grid 적용
+  - 최대 포스터 갯수 20개
+  - 포스터 Hover 시 Rating 정보 노출
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* 제목 검색기능  
+![search](https://user-images.githubusercontent.com/52055504/109622158-26fb5280-7b7f-11eb-9ed3-cdfe2e36c7dc.gif)
+  - Movie와 Show Section을 구분하여 검색
+  - 클릭 시 해당 Movie 또는 Show Detail로 이동
 
-### `npm run build`
+* Media Query  
+![mobile home](https://user-images.githubusercontent.com/52055504/109631547-66c73780-7b89-11eb-928d-db2cfc8092c0.gif)  
+[홈 적용]  
+![mobile detail](https://user-images.githubusercontent.com/52055504/109631662-85c5c980-7b89-11eb-8973-84a6cea14c44.gif)  
+[디테일 적용]
+  - 헤더 : 지정 길이 이하 width일 때 Menu 버튼으로 Header 아이템 숨김
+  - 슬라이드배너 : width 변화에 따라 슬라이드당 포스터 갯수 변화
+  - 포스터: width 변화에 따라 행과 열 자동 정렬
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

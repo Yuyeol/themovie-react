@@ -35,7 +35,7 @@ const SlideBanner = ({ mvTopRated, tvTopRated, toggleBanner, isMovie }) => {
     dots: true,
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 1500,
     speed: 1000,
     slidesToShow: 5,
     slidesToScroll: 5,
