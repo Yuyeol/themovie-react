@@ -46,7 +46,7 @@
 
 * Media Query  
 ![mobile home](https://user-images.githubusercontent.com/52055504/109631547-66c73780-7b89-11eb-928d-db2cfc8092c0.gif)  
-[홈 적용]
+[홈 적용]  
 ![mobile detail](https://user-images.githubusercontent.com/52055504/109631662-85c5c980-7b89-11eb-8973-84a6cea14c44.gif)  
 [디테일 적용]
   - 헤더 : 지정 길이 이하 width일 때 Menu 버튼으로 Header 아이템 숨김
